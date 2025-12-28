@@ -27,6 +27,16 @@ if response.status_code == 200:
     print(type(data))
     print(type(data[0]))
     print(type(data[0]["name"]))
+    print(data[0].keys())
+    print(type(data[0]["languages"]))
+    print(data[0]['languages']) #{'nep': 'Nepali'} xa {key:value}, so data.get(...).values() 
+
+    print(data[0]["currencies"])
+    print(type(data[0]["currencies"]))
+    # {'NPR': {'symbol': '₨', 'name': 'Nepalese rupee'}}
+    # for code, info in ..., code=NPR, inner dict is info
+
+    print(data[0]["flags"])
 
 else:
     print(f"Error : {response.status_code}")

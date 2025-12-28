@@ -7,6 +7,8 @@ This tool lets users enter a country name and prints:
 - Population
 - Region
 - Languages
+- Currency
+- Flag url
 
 
 ## How To Run

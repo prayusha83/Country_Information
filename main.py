@@ -26,11 +26,21 @@ def parse_info(data):
     # data['languages'] gives error if no language so use data.get()
     # data.get("...", {}) means give ... if exists, else, give an empty dict
 
+    currencies_data = data.get("currencies", {})
+    currencies = []
+    for code, info in currencies_data.items():
+        currencies.append(f"{info['name']} ({code})")
+    currency = ", ".join(currencies)
+
+    flag_url = data["flags"]["png"]
+
     return {
         "Name": name,
         "Population": f"{population:,}",
         "Region": region,
-        "Languages": languages
+        "Languages": languages,
+        "Currency": currency,
+        "Flag url": flag_url
     }
     
 
